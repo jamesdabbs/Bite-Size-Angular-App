@@ -17,4 +17,19 @@ $routeProvider
     controller: 'ContactController'
   })
 
+  .when('/sign_up', {
+    templateUrl: 'views/sign_up.html',
+    controller:  'RegisterController'
+  })
+
+  .when('/', {
+    templateUrl: 'views/home.html',
+    controller:  'HomeController'
+  })
+
+  // Uggghhh
+  .when('/_=_', {
+      templateUrl: 'views/home.html',
+      controller:  'HomeController'
+  })
 });

@@ -1,0 +1,25 @@
+<h1>Home</h1>
+<p>Token: {{userToken}}</p>
+
+<h2>API Response:</h2>
+
+<h3>Id</h3>
+<p>{{user.id}}</p>
+
+<h3>Email</h3>
+<p>{{user.email}}</p>
+
+<h3>Created</h3>
+<p>{{user.created_at}}</p>
+
+<div ng-show="user.facebook_id">
+  <h3>Facebook Id</h3>
+  <p>{{user.facebook_id}}</p>
+
+  <h3>Birthday</h3>
+  <p>{{user.birthday}}</p>
+</div>
+
+<div ng-hide="user.facebook_id">
+  <a href="http://localhost:3000/users/auth/facebook?state={{userToken}}:{{domain}}">Link with Facebook</a>
+</div>
