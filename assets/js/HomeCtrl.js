@@ -1,5 +1,5 @@
-phoneApp.controller('HomeController', ['$scope', '$http', '$location', function($scope, $http, $location){
-    $scope.userToken = localStorage.getItem("user-token");
+phoneApp.controller('HomeController', ['$scope', '$http', '$location', 'User', function($scope, $http, $location, User) {
+    $scope.userToken = User.getToken();
 
     if (!$scope.userToken) {
         $location.path("/sign_up");

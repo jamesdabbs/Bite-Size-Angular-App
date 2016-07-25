@@ -1,5 +1,5 @@
-phoneApp.controller('RegisterController', ['$scope', '$http', '$location', function($scope, $http, $location) {
-    if (localStorage.getItem("user-token")) {
+phoneApp.controller('RegisterController', ['$scope', '$http', '$location', 'User', function($scope, $http, $location, User) {
+    if (User.isLoggedIn()) {
         $location.path("/");
     }
 
@@ -15,15 +15,13 @@ phoneApp.controller('RegisterController', ['$scope', '$http', '$location', funct
             }
         }).then(function(response) {
             // TODO: store and respect expiration time??
-            localStorage.setItem("user-token", response.data.token);
-            $location.path("/");
+            User.logIn(response.data.token);
         }, function() {
             alert("Something went wrong!"); // FIXME: be better
         })
     }
 
     $scope.logout = function() {
-        localStorage.removeItem("user-token");
-        $location.path("/sign_up");
+        User.logOut()
     }
 }])

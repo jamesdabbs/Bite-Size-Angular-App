@@ -13,10 +13,11 @@
   <body ng-app="phoneApp">
 
     <header>
-      <p>Phone</p>
-      <div><a href = "#/call">Dial</a></div>
-      <div><a href = "#/home" class = "active">Contacts</a></div>
-      <div><a href = "#/favorites">Favorites</a></div>
+      <!--
+        <div><a href = "#/call">Dial</a></div>
+        <div><a href = "#/home" class = "active">Contacts</a></div>
+        <div><a href = "#/favorites">Favorites</a></div>
+      -->
       <div ng-controller="RegisterController"><a ng-click="logout()" href="#/">Logout</a></div>
     </header>
 
@@ -29,6 +30,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="assets/js/User.js"></script>
     <script type="text/javascript" src="assets/js/ContactCtrl.js"></script>
     <script type="text/javascript" src="assets/js/DialCtrl.js"></script>
     <script type="text/javascript" src="assets/js/HomeCtrl.js"></script>
